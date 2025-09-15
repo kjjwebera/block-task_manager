@@ -1,0 +1,33 @@
+.midbtn{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.task-count {
+    margin-left: 20px;
+    font-size: 12px;
+    border-radius: 50%;
+    background-color: lightgray;
+    padding: 6px 9px;
+}
+.add-cmnt {
+    text-decoration: none;
+    /* color: blue; */
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+}
+
+.plus-sign {
+    background-color: black;
+    padding: 1px 3px;
+    margin-right: 5px;
+    color: white;
+    font-size: 14px; /* Adjust as needed */
+    line-height: 1; /* Ensures no extra space within the element */
+    border-radius: 3px; /* Optional: adds rounded corners */
+}
+
+.comment-text {
+    color: #0cb9f5;
+    font-size: 14px; /* Ensure consistent text size */
+}

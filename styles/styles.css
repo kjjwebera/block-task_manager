@@ -1,0 +1,26 @@
+/*.task-item {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+}*/
+
+/*.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #0056b3;
+}
+
+.task-actions {
+    margin-left: 10px;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+*/
