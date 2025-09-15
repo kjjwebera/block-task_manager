@@ -1,0 +1,64 @@
+<XMLDB PATH="blocks/task_manager/db" VERSION="202501171530" COMMENT="XMLDB file for Moodle blocks/task_manager">
+    <TABLES>    
+        <TABLE NAME="block_task_manager_tasks" COMMENT="Stores tasks">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" COMMENT="ID"/>
+                <FIELD NAME="course_id" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="COURSE ID"/>
+                <FIELD NAME="title" TYPE="char" LENGTH="255" NOTNULL="true" COMMENT="TITLE"/>
+                <FIELD NAME="short_desc" TYPE="char" LENGTH="255" NOTNULL="true" COMMENT="Short Description"/>
+                <FIELD NAME="description" TYPE="text" NOTNULL="false" COMMENT="DESCRIPTION"/>
+                <FIELD NAME="due_date" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="DUE DATE"/>
+                <FIELD NAME="filesize" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="File Size"/>
+                <FIELD NAME="typeofwork" TYPE="char" LENGTH="255" NOTNULL="false" COMMENT="Type of Work"/>
+                <FIELD NAME="total_mark" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="Total Mark"/>
+                <FIELD NAME="pass_mark" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="Mark to pass"/>
+                <FIELD NAME="visibility" TYPE="char" LENGTH="255" NOTNULL="true" COMMENT="Visibility"/>
+                <FIELD NAME="created_by" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="CREATED BY"/>
+                <FIELD NAME="batchcode" TYPE="char" LENGTH="255" NOTNULL="false" COMMENT="Batch code"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="PRIMARY KEY"/>
+            </KEYS>
+        </TABLE>
+        <TABLE NAME="block_task_manager_sub" COMMENT="Stores submissions">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" COMMENT="ID FOR SUBMISSION"/>
+                <FIELD NAME="task_id" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="TASK ID"/>
+                <FIELD NAME="user_id" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="USER ID"/>
+                <FIELD NAME="file_path" TYPE="char" LENGTH="255" NOTNULL="false" COMMENT="FILE PATH"/>
+                <FIELD NAME="submission_date" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="SUBMISSION DATE"/>
+                <FIELD NAME="feedback_comment" TYPE="text" NOTNULL="false" COMMENT="FEEDBACK"/>
+                <FIELD NAME="lastmodefied_mark" TYPE="int" LENGTH="10" NOTNULL="false" COMMENT="Last modified marks"/>
+                <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true"/> 
+                <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true"/> 
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="PRIMARY"/>
+            </KEYS>
+        </TABLE>
+
+        <TABLE NAME="block_task_manager_score" COMMENT="Stores user scores for tasks and API update status."> 
+            <FIELDS> 
+            <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/> 
+            <FIELD NAME="sub_id" TYPE="int" LENGTH="10" NOTNULL="true"/>  
+            <FIELD NAME="task_id" TYPE="int" LENGTH="10" NOTNULL="true"/> 
+            <FIELD NAME="user_id" TYPE="int" LENGTH="10" NOTNULL="true"/> 
+            <FIELD NAME="score" TYPE="int" LENGTH="10"  NOTNULL="true" /> 
+            <FIELD NAME="updatedby_userid" TYPE="int" LENGTH="10" NOTNULL="true"/> 
+            <FIELD NAME="apiupdate_status" TYPE="char" LENGTH="50" NOTNULL="false"/> 
+            <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true"/> 
+            <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true"/> 
+            </FIELDS>
+            <KEYS>
+              <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="sub_idx" UNIQUE="false" FIELDS="sub_id"/>
+              <INDEX NAME="taskid_idx" UNIQUE="false" FIELDS="task_id"/>
+              <INDEX NAME="userid_idx" UNIQUE="false" FIELDS="user_id"/>
+            </INDEXES>
+            </TABLE> 
+        
+    </TABLES>
+</XMLDB>
+
